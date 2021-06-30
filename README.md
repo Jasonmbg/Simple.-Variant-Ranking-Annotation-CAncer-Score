@@ -1,8 +1,8 @@
 # Simple. Variant Ranking Annotation CAncer Score
 
-### Efstathios-Iason Vlachavas
-#### DKFZ-Department of Molecular Genome Analysis
-##### Efstathios-Iason.Vlachavas@dkfz-heidelberg.de
+#### Efstathios-Iason Vlachavas
+###### DKFZ-Division of Molecular Genome Analysis (B050)
+###### Efstathios-Iason.Vlachavas@dkfz-heidelberg.de
 
 ## Description
 
