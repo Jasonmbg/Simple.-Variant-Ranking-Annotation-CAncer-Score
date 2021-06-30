@@ -14,7 +14,9 @@ In addition, for the construction and the relative score cut-offs, various guide
 
 1. [Belgian ComPerMed Expert Panel](https://doi.org/10.3390/cancers11122030) 
 
-2. [Variant Interpretation for Cancer Consortium (VICC)](https://cancervariants.org/research/standards/onc_path_sop/) 
+2. [Variant Interpretation for Cancer Consortium (VICC)](https://cancervariants.org/research/standards/onc_path_sop/)
+
+3. [Review on pathogenicity predictors](https://dx.doi.org/10.1371%2Fjournal.pcbi.1006481)
 
 
 ## Implementation
@@ -51,7 +53,31 @@ install.packages(c("DT","tidyverse","jsonlite"))
 
 Here we present a simple example using the mutations from a randomly selected colorectal cancer patient sample ("crc4") from published Reiter et al., 2018 study (https://doi.org/10.1126/science.aat7171), mainly utilizing the Kim et al., 2015 publication (https://clincancerres.aacrjournals.org/content/21/19/4461#:~:text=10.1158/1078-0432.CCR-14-2413). Then, the web version of OpenCRAVAT was used to perform integrative variant annotation using the 15 aforementioned annotators, and the relative RData file was created. Below, a snapshot of the created html file with the top 10 hits are depicted:
 
-![Top 10 ranked variants example](./Scoring.Snapshot.OC.png)
+![Top 10 ranked variants example](./Reproducible.Example.Material/Scoring.Snapshot.OC.png)
+
+```r
+sessionInfo()
+
+R version 4.0.3 (2020-10-10)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18363)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] htmlwidgets_1.5.3 DT_0.18           jsonlite_1.7.2    forcats_0.5.1     stringr_1.4.0    
+ [6] dplyr_1.0.6       purrr_0.3.4       readr_1.4.0       tidyr_1.1.3       tibble_3.1.2     
+[11] ggplot2_3.3.4     tidyverse_1.3.1
+
+```
 
 ## Utilization feedback
 
