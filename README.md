@@ -53,7 +53,7 @@ install.packages(c("DT","tidyverse","jsonlite"))
 
 Here we present a simple example using the mutations from a randomly selected colorectal cancer patient sample ("crc4") from published Reiter et al., 2018 study (https://doi.org/10.1126/science.aat7171), mainly utilizing the Kim et al., 2015 publication (https://clincancerres.aacrjournals.org/content/21/19/4461#:~:text=10.1158/1078-0432.CCR-14-2413). Then, the web version of OpenCRAVAT was used to perform integrative variant annotation using the 15 aforementioned annotators, and the relative RData file was created. Below, a snapshot of the created html file with the top 10 hits are depicted:
 
-![Top 10 ranked variants example](./Reproducible.Example.Material/Scoring.Snapshot.OC.png)
+![Top 10 ranked variants example](./Reproducible.Example.material/Scoring.Snapshot.OC.png)
 
 ```r
 sessionInfo()
