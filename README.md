@@ -89,6 +89,6 @@ Stefan Wiemann
 
 Kym Pagel
 
-Rick Kym
+Rick Kim
 
 Olga Papadodima
