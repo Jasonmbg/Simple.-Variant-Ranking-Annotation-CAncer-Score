@@ -4,6 +4,8 @@
 ###### DKFZ-Division of Molecular Genome Analysis (B050)
 ###### Efstathios-Iason.Vlachavas@dkfz-heidelberg.de
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5636747.svg)](https://doi.org/10.5281/zenodo.5636747)
+
 ## Description
 
 The main goal of the developing a ranking scheme in translational cancer research, is to aid the biological interpretation of lists of annotated cancer variants at the single patient resolution. Briefly, taking into account different annotation resources, such as variant effect prediction, cancer evidence, expression and systems biology properties, an integrated scoring value is assigned to each variant as a *hollistic* score, ranking variants from a single patient mutations list. In addition, the first version of the scoring process is based on single nucleotide changes that occur in the protein-coding space; that is, somatic mutations that can lead to several possible changes to a protein. Overall, the main rationale is despite the fact that a significant number of variant annotation tools in cancer research are available for a robust exploitation of putative somatic variants, no direct score or assessment is available for a simple ranking or prioritization of the interrogated variants, based on the plethora of distinct evidence. 
@@ -92,7 +94,3 @@ Kym Pagel
 Rick Kim
 
 Olga Papadodima
-
-https://zenodo.org/badge/DOI/10.5281/zenodo.5636747.svg
-
-
