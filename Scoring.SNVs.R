@@ -37,8 +37,7 @@ scoring.func.snvs <- function(rdata_dir,exp.genes=NULL,sample.name.output,
     
   } else if (is.character(exp.genes)){
     
-    d2 <- OC.input %>% mutate(Exp_score= 
-                                if_else(hugo%in%c(exp.genes), 1, 0, missing = 0))
+    d2 <- OC.input %>% mutate(Exp_score= if_else(hugo%in%c(exp.genes), 1, 0, missing = 0))
     
   } 
   
