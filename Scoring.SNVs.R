@@ -132,8 +132,7 @@ scoring.func.snvs <- function(rdata_dir,exp.genes=NULL,sample.name.output,
         !is.na(civic__clinical_a_score) & str_detect(clinvar__sig, "Pathogenic|drug response|pathogenic$")~1,
         
         !is.na(civic__clinical_a_score) | str_detect(clinvar__sig, "Pathogenic|drug response|pathogenic$")~0.5,
-        TRUE~0)) %>% mutate(Total_Cancer_score = rowMeans(select(., cancer_gene_ev_score,
-                                                                 cancer_freq_score)))
+        TRUE~0)) %>% mutate(Total_Cancer_score = rowMeans(select(., cancer_gene_ev_score, cancer_freq_score)))
   
   
   # Final merging of the created sub-scores
