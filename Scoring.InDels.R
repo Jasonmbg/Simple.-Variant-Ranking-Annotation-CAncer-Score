@@ -104,8 +104,7 @@ scoring.func.indels <- function(rdata_dir,exp.genes=NULL,sample.name.output,
   
   # Final merging of the created sub-scores
   
-  d.final <- d4 %>% mutate(Final_Score= weight.func(a=Pathogenicity_Indel_score,                                                                       b=Total_Cancer_score,
-                          b=Total_Cancer_score, c=clin_ev_score,d=Exp_score))
+  d.final <- d4 %>% mutate(Final_Score= weight.func(a=Pathogenicity_Indel_score, b=Total_Cancer_score, c=clin_ev_score, d=Exp_score))
   
   write_csv(d.final,file=str_c("Finaloutput.Variant.Ranked.OpenCRAVAT",sample.name.output,"csv",sep="."))
   
