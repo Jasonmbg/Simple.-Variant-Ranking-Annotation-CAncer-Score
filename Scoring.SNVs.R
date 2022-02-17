@@ -23,7 +23,8 @@ scoring.func.snvs <- function(rdata_dir,exp.genes=NULL,sample.name.output,
   
   if(!any(colnames(OC.input)%in%c("chrom", "pos", "ref_base", "alt_base","cchange", 
                                   "all_mappings","achange", "hugo","transcript","so","samples","numsample","spliceai__ds_dl",
-                                  "vest__score","gnomad__af","fathmm_xf_coding__fathmm_xf_coding_pred","siphy__logodds_rank",   "cscape_coding__score","phastcons__phastcons30_mamm_r","cgc__class",
+                                  "vest__score","gnomad__af","fathmm_xf_coding__fathmm_xf_coding_pred","siphy__logodds_rank",   
+                                  "cscape_coding__score","phastcons__phastcons30_mamm_r","cgc__class",
                                   "cosmic__variant_count","cgl__class","Cancer_hotspots_vcount", "civic__clinical_a_score","clinvar__sig"))) {
     
     stop("Not necessary OpenCRAVAT annotator names for creating the merged score !!")
