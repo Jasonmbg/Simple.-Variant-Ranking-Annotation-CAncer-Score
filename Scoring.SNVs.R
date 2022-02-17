@@ -1,7 +1,7 @@
 # Custom scoring function for variant prioritization based on OpenCRAVAT integrative annotation
 
 
-scoring.func <- function(rdata_dir,exp.genes=NULL){
+scoring.func.snvs <- function(rdata_dir,exp.genes=NULL){
 
   
   # rdata_dir is the full path directory where the relative RData file has been stored

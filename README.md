@@ -37,10 +37,14 @@ oc report example_input.sqlite -t rdata
 
 For more details see [here](https://open-cravat.readthedocs.io/en/latest/Reporter.html#example)
 
-4. Finally, after creating the necessary RData file including the variants from one patient/sample, the main function in R to run:
+4. Finally, after creating the necessary RData file including the variants from one patient/sample, the main functions in R to run are:
 
 ```r
-ranked_snvs = predict_sysSVM2(rdata_dir,exp.genes=NULL)
+ranked_snvs = scoring.func.snvs(rdata_dir,exp.genes=NULL,sample.name.output,
+w1=0.7,w2=0.8,w3=0.9,w4=1)
+
+ranked_indels = scoring.func.indels(rdata_dir,exp.genes=NULL,sample.name.output,
+w1=0.7,w2=0.8,w3=0.9,w4=1)
 
 ```
 
@@ -53,7 +57,7 @@ install.packages(c("DT","tidyverse","jsonlite"))
 
 ## Reproducible example
 
-Here we present a simple example using the mutations from a randomly selected colorectal cancer patient sample ("crc4") from published Reiter et al., 2018 study (https://doi.org/10.1126/science.aat7171), mainly utilizing the Kim et al., 2015 publication (https://clincancerres.aacrjournals.org/content/21/19/4461#:~:text=10.1158/1078-0432.CCR-14-2413). Then, the web version of OpenCRAVAT was used to perform integrative variant annotation using the 15 aforementioned annotators, and the relative RData file was created. Below, a snapshot of the created html file with the top 10 hits are depicted:
+Here we present a simple example using the mutations from a randomly selected colorectal cancer patient sample ("crc4") from published Reiter et al., 2018 study (https://doi.org/10.1126/science.aat7171), mainly utilizing the Kim et al., 2015 publication (https://clincancerres.aacrjournals.org/content/21/19/4461#:~:text=10.1158/1078-0432.CCR-14-2413). Then, the web version of OpenCRAVAT was used to perform integrative variant annotation using the 15 aforementioned annotators, and the relative RData file was created. Below, a snapshot of the created html file with the top 10 hits are depicted (based on the initial snv version:
 
 ![Top 10 ranked variants example](./Reproducible.Example.material/Scoring.Snapshot.OC.png)
 
