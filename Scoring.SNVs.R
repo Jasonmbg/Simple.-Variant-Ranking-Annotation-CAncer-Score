@@ -148,14 +148,12 @@ scoring.func.snvs <- function(rdata_dir,exp.genes=NULL,sample.name.output,
                                                     c=clin_ev_score,d=Exp_score))
   
   
-  write_csv(d.final,file=str_c("Finaloutput.Variant.Ranked.OpenCRAVAT",sample.name.output,"csv",
-                               sep="."))
+  write_csv(d.final,file=str_c("Finaloutput.Variant.Ranked.OpenCRAVAT",sample.name.output,"csv", sep="."))
   
   dat.sel.top10 <- d.final %>% arrange(desc(Final_Score)) %>% top_n(10)
   
   mytable <- datatable(dat.sel.top10, filter = 'top', options = list(paging = FALSE))
   
-  saveWidget(mytable, file=str_c("Top10.Ranked.OC",sample.name.output,
-                                 "mytable.html",sep="."))
+  saveWidget(mytable, file=str_c("Top10.Ranked.OC", sample.name.output, "mytable.html",sep="."))
   
 }
