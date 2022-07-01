@@ -25,9 +25,11 @@ In addition, for the construction and the relative score cut-offs, various guide
 
 1. The user has to initially run OpenCRAVAT web server (https://run.opencravat.org/) or install locally (https://open-cravat.readthedocs.io/en/latest/quickstart.html). The input can be a vcf file, or a txt with necessary columns (https://open-cravat.readthedocs.io/en/latest/File-Formats.html)
 
-2. The following annotators should run: gnomAD, ClinVar, CIViC, FATHMM XF Coding, VEST4, SpliceAI, COSMIC, CScape Coding, Cancer Gene Census, Cancer Gene Landscape, Cancer Hotspots, SiPhy and Phast Cons (14 annotators if having hg19 as the reference genome, to also include **hg19 coordinates**).
+2. The following annotators should run for SNVs: gnomAD, ClinVar, CIViC, FATHMM XF Coding, VEST4, SpliceAI, COSMIC, CScape Coding, Cancer Gene Census, Cancer Gene Landscape, Cancer Hotspots, SiPhy and Phast Cons (14 annotators if having hg19 as the reference genome, to also include **hg19 coordinates**).
 
-3. Next, an RData file has to be created either from the download section of the web server, or locally using the installed version of OpenCRAVAT
+3. Similarly, for InDels: gnomAD, ClinVar, COSMIC, Cancer Gene Census, Cancer Gene Landscape, LoFtool and MutPred-Indel).
+
+4. Next, an RData file has to be created either from the download section of the web server, or locally using the installed version of OpenCRAVAT
 
 ```python
 oc report example_input.sqlite -t rdata
@@ -48,11 +50,15 @@ source("Scoring.InDels.R")
 4. Finally, after creating the necessary *RData file* including the variants from one patient/sample, the main functions in R to run are:
 
 ```r
-ranked_snvs = scoring.func.snvs(rdata_dir,exp.genes=NULL,sample.name.output,
-w1=0.7,w2=0.8,w3=0.9,w4=1)
+ranked_snvs = scoring.func.snvs.core(rdata_dir, exp.genes=NULL, 
+                                     ref.genome=c("hg19","hg38"),
+                                     sample.name.output, 
+                                     w1=0.7, w2=0.8, w3=0.9, w4=1)
 
-ranked_indels = scoring.func.indels(rdata_dir,exp.genes=NULL,sample.name.output,
-w1=0.7,w2=0.8,w3=0.9,w4=1)
+ranked_indels = scoring.func.indels.core(rdata_dir, exp.genes=NULL,
+                                        ref.genome=c("hg19","hg38"), 
+                                        sample.name.output,
+                                        w1=0.7, w2=0.8, w3=0.9, w4=1)
 
 ```
 
