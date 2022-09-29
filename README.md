@@ -27,7 +27,7 @@ In addition, for the construction and the relative score cut-offs, various guide
 
 2. The following annotators should run for SNVs: gnomAD, ClinVar, CIViC, FATHMM XF Coding, VEST4, SpliceAI, COSMIC, CScape Coding, Cancer Gene Census, Cancer Gene Landscape, Cancer Hotspots, SiPhy and Phast Cons (14 annotators if having hg19 as the reference genome, to also include **hg19 coordinates**).
 
-3. Similarly, for InDels: gnomAD, ClinVar, COSMIC, Cancer Gene Census, Cancer Gene Landscape, LoFtool and MutPred-Indel).
+3. Similarly, for InDels: gnomAD, ClinVar, COSMIC, Cancer Gene Census, Cancer Gene Landscape, LoFtool and MutPred-Indel.
 
 4. Next, an RData file has to be created either from the download section of the web server, or locally using the installed version of OpenCRAVAT
 

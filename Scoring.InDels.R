@@ -28,8 +28,8 @@ scoring.func.indels.core <- function(rdata_dir, exp.genes=NULL,
   
   if (ref.genome== "hg19") {
     
-    nec_annot_cols <- c("chrom", "pos", "ref_base", "alt_base", "hugo", "transcript", "so", "cchange", "achange", "all_mappings", "samples", "numsample", "hg19__chrom", "hg19__pos","mutpred_indel__score","loftool__loftool_score","siphy__logodds_rank",
-                        "phastcons__phastcons30_mamm_r", "gnomad__af", "cgc__class", "cosmic__variant_count", "cgl__class", "cgl__class", "clinvar__sig")
+    nec_annot_cols <- c("chrom", "pos", "ref_base", "alt_base", "hugo", "transcript", "so", "cchange", "achange", "all_mappings", "samples", "numsample", "hg19__chrom", "hg19__pos","mutpred_indel__score","loftool__loftool_score",
+                        "gnomad__af", "cgc__class", "cosmic__variant_count", "cgl__class", "cgl__class", "clinvar__sig")
     
     if(!all(nec_annot_cols%in%colnames(OC.input))) {
       stop("Not all necessary OpenCRAVAT annotator names for creating the relative scores !!")
@@ -42,7 +42,7 @@ scoring.func.indels.core <- function(rdata_dir, exp.genes=NULL,
   
   else if (ref.genome == "hg38") {
     
-    nec_annot_cols <- c("chrom", "pos", "ref_base", "alt_base", "hugo", "transcript", "so", "cchange", "achange", "all_mappings", "samples", "numsample", "mutpred_indel__score", "loftool__loftool_score","siphy__logodds_rank","phastcons__phastcons30_mamm_r", "gnomad__af", "cgc__class", "cosmic__variant_count", "cgl__class", "cgl__class", "clinvar__sig") 
+    nec_annot_cols <- c("chrom", "pos", "ref_base", "alt_base", "hugo", "transcript", "so", "cchange", "achange", "all_mappings", "samples", "numsample", "mutpred_indel__score", "loftool__loftool_score", "gnomad__af", "cgc__class", "cosmic__variant_count", "cgl__class", "cgl__class", "clinvar__sig") 
     
     if(!all(nec_annot_cols%in%colnames(OC.input))) {
       stop("Not all necessary OpenCRAVAT annotator names for creating the relative scores !!")
@@ -75,9 +75,9 @@ scoring.func.indels.core <- function(rdata_dir, exp.genes=NULL,
     
     mutate(Pathogenicity_Indel_score=case_when(
       
-      so %in% c("frameshift_truncation","frameshift_elongation") & loftool__loftool_score        >0.6 ~1,
+      so %in% c("frameshift_truncation","frameshift_elongation") & loftool__loftool_score >0.6 ~1,
       
-      so %in% c("frameshift_truncation","frameshift_elongation") & loftool__loftool_score        <0.6 ~0.8,
+      so %in% c("frameshift_truncation","frameshift_elongation") & loftool__loftool_score <0.6 ~0.8,
       
       so %in% c("inframe_deletion","inframe_insertion") & mutpred_indel__score >0.5 ~0.6,
       
