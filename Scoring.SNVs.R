@@ -147,6 +147,8 @@ scoring.func.snvs.core <- function(rdata_dir, exp.genes=NULL,
         
         !is.na(civic__clinical_a_score) & str_detect(clinvar__sig, "Pathogenic|drug response|pathogenic$")~1,
         
+        civic__clinical_a_score==0 & str_detect(clinvar__sig, "Pathogenic|drug response|pathogenic$")~0.5,
+        
         !is.na(civic__clinical_a_score) | str_detect(clinvar__sig, "Pathogenic|drug response|pathogenic$")~0.5,
         TRUE~0)) %>% mutate(Total_Cancer_score = rowMeans(select(., cancer_gene_ev_score,
                                                                  cancer_freq_score)))
