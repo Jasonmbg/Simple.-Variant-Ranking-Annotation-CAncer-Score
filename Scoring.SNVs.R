@@ -106,7 +106,7 @@ scoring.func.snvs.core <- function(rdata_dir, exp.genes=NULL,
         so %in% c("missense_variant","stop_gained","start_lost","stop_lost") &fathmm_xf_coding__fathmm_xf_coding_pred=="Damaging" & cscape_coding__score>0.6 ~0.8,
         
         so %in% c("missense_variant","stop_gained","start_lost","stop_lost") & 
-          vest__score>0.6 | fathmm_xf_coding__fathmm_xf_coding_pred=="Damaging" | cscape_coding__score>0.6 ~0.5,
+          (vest__score>0.6 | fathmm_xf_coding__fathmm_xf_coding_pred=="Damaging" | cscape_coding__score>0.6) ~0.5,
         
         TRUE~0),
       
