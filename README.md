@@ -1,4 +1,4 @@
-# Simple. Variant Ranking Annotation CAncer Score
+# Simple. Variant Ranking Annotation CAncer Score (SVRACAS)
 
 #### Efstathios-Iason Vlachavas
 ###### DKFZ-Division of Molecular Genome Analysis (B050)
